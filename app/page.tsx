@@ -775,7 +775,7 @@ export default function JapaneseVocabulary() {
             <TabsContent value="meishi" className="mt-0">
               {currentWord && (
                 <VocabCard
-                  className="bg-yellow-50"
+                  className="bg-yellow-50 dark:bg-black"
                   word={currentWord}
                   totalCount={currentWords.length}
                   currentIndex={currentIndex}
@@ -788,7 +788,7 @@ export default function JapaneseVocabulary() {
             <TabsContent value="doushi" className="mt-0">
               {currentWord && (
                 <VocabCard
-                  className="bg-green-50"
+                  className="bg-green-50 dark:bg-black"
                   word={currentWord}
                   totalCount={currentWords.length}
                   currentIndex={currentIndex}
