@@ -1,10 +1,14 @@
 "use client"
 
+import type React from "react"
+
 import { useState, useEffect } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Shuffle } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { ChevronLeft, ChevronRight, Shuffle, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 type Doushi = {
@@ -29,6 +33,11 @@ type Meishi = {
 }
 
 type VocabWord = Doushi | Meishi
+
+// Create a unique ID for each word
+const createWordId = (word: VocabWord): string => {
+  return `${word.type}-${word.word}`
+}
 
 export default function JapaneseVocabulary() {
   const doushiFormatted: Doushi[] = [
@@ -644,9 +653,25 @@ export default function JapaneseVocabulary() {
     },
   ]
 
+  const allWords = [...meishiFormatted, ...doushiFormatted]
+
   const [activeTab, setActiveTab] = useState<"meishi" | "doushi" | "all">("all")
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [currentWords, setCurrentWords] = useState<VocabWord[]>([])
+  const [learnedWords, setLearnedWords] = useState<string[]>([])
+
+  // Load learned words from localStorage on initial render
+  useEffect(() => {
+    const savedLearnedWords = localStorage.getItem("learnedWords")
+    if (savedLearnedWords) {
+      setLearnedWords(JSON.parse(savedLearnedWords))
+    }
+  }, [])
+
+  // Save learned words to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("learnedWords", JSON.stringify(learnedWords))
+  }, [learnedWords])
 
   // Initialize and update the filtered words based on the active tab
   useEffect(() => {
@@ -685,51 +710,161 @@ export default function JapaneseVocabulary() {
     setCurrentIndex(randomIndex)
   }
 
+  const toggleLearnedStatus = (word: VocabWord, event: React.MouseEvent) => {
+    event.stopPropagation() // Prevent card from expanding when clicking checkbox
+
+    const wordId = createWordId(word)
+
+    if (learnedWords.includes(wordId)) {
+      setLearnedWords(learnedWords.filter((id) => id !== wordId))
+    } else {
+      setLearnedWords([...learnedWords, wordId])
+    }
+  }
+
+  const removeFromLearned = (wordId: string, event: React.MouseEvent) => {
+    event.stopPropagation() // Prevent navigating to the word when clicking the remove button
+    setLearnedWords(learnedWords.filter((id) => id !== wordId))
+  }
+
+  const navigateToWord = (wordId: string) => {
+    // Find the word in all words
+    const wordIndex = allWords.findIndex((word) => createWordId(word) === wordId)
+
+    if (wordIndex !== -1) {
+      const word = allWords[wordIndex]
+
+      // Set the appropriate tab
+      if (word.type === "Meishi") {
+        setActiveTab("meishi")
+      } else if (word.type === "Doushi") {
+        setActiveTab("doushi")
+      }
+
+      // Find the index in the current filtered list
+      setTimeout(() => {
+        const newIndex = currentWords.findIndex((w) => createWordId(w) === wordId)
+        if (newIndex !== -1) {
+          setCurrentIndex(newIndex)
+        }
+      }, 0)
+    }
+  }
+
   // Get the current word to display
   const currentWord = currentWords[currentIndex]
 
   return (
-    <div className="container mx-auto py-8 px-4 max-w-3xl">
-      <h1 className="text-3xl font-bold text-center mb-8">Japanese Vocabulary Study</h1>
+    <div>
+      {/* Main content */}
+      <div className="flex-1 overflow-auto">
+        <div className="container mx-auto py-8 max-w-3xl">
+          <h1 className="text-3xl font-bold text-center mb-8">Japanese Vocabulary Study</h1>
 
-      <Tabs
-        defaultValue="all"
-        value={activeTab}
-        onValueChange={(value) => setActiveTab(value as "meishi" | "doushi" | "all")}
-      >
-        <TabsList className="grid grid-cols-3 mb-8">
-          <TabsTrigger value="meishi">名詞 (Meishi)</TabsTrigger>
-          <TabsTrigger value="doushi">動詞 (Doushi)</TabsTrigger>
-          <TabsTrigger value="all">All</TabsTrigger>
-        </TabsList>
+          <Tabs
+            defaultValue="all"
+            value={activeTab}
+            onValueChange={(value) => setActiveTab(value as "meishi" | "doushi" | "all")}
+          >
+            <TabsList className="grid grid-cols-3 mb-8">
+              <TabsTrigger value="meishi">名詞 (Meishi)</TabsTrigger>
+              <TabsTrigger value="doushi">動詞 (Doushi)</TabsTrigger>
+              <TabsTrigger value="all">All</TabsTrigger>
+            </TabsList>
 
-        <TabsContent value="meishi" className="mt-0">
-          {currentWord && <VocabCard className="bg-yellow-100" word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
-        </TabsContent>
+            <TabsContent value="meishi" className="mt-0">
+              {currentWord && (
+                <VocabCard
+                  className="bg-yellow-50"
+                  word={currentWord}
+                  totalCount={currentWords.length}
+                  currentIndex={currentIndex}
+                  isLearned={learnedWords.includes(createWordId(currentWord))}
+                  onToggleLearned={(e) => toggleLearnedStatus(currentWord, e)}
+                />
+              )}
+            </TabsContent>
 
-        <TabsContent value="doushi" className="mt-0">
-          {currentWord && <VocabCard className="bg-green-100" word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
-        </TabsContent>
+            <TabsContent value="doushi" className="mt-0">
+              {currentWord && (
+                <VocabCard
+                  className="bg-green-50"
+                  word={currentWord}
+                  totalCount={currentWords.length}
+                  currentIndex={currentIndex}
+                  isLearned={learnedWords.includes(createWordId(currentWord))}
+                  onToggleLearned={(e) => toggleLearnedStatus(currentWord, e)}
+                />
+              )}
+            </TabsContent>
 
-        <TabsContent value="all" className="mt-0">
-          {currentWord && <VocabCard word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
-        </TabsContent>
-      </Tabs>
+            <TabsContent value="all" className="mt-0">
+              {currentWord && (
+                <VocabCard
+                  word={currentWord}
+                  totalCount={currentWords.length}
+                  currentIndex={currentIndex}
+                  isLearned={learnedWords.includes(createWordId(currentWord))}
+                  onToggleLearned={(e) => toggleLearnedStatus(currentWord, e)}
+                />
+              )}
+            </TabsContent>
+          </Tabs>
 
-      <div className="lg:flex justify-center space-y-2 lg:space-y-0 lg:space-x-2 mt-8">
-        <Button className="w-full" onClick={goToPrevious} variant="outline" size="lg">
-          <ChevronLeft className="mr-2 h-4 w-4" />
-          Previous
-        </Button>
-        <Button className="w-full" onClick={goToRandom} variant="outline" size="lg">
-          <Shuffle className="mr-2 h-4 w-4" />
-          Random
-        </Button>
-        <Button className="w-full" onClick={goToNext} variant="outline" size="lg">
-          Next
-          <ChevronRight className="ml-2 h-4 w-4" />
-        </Button>
+          <div className="lg:flex justify-center space-y-2 lg:space-y-0 lg:space-x-2 mt-8">
+            <Button className="w-full" onClick={goToPrevious} variant="outline" size="lg">
+              <ChevronLeft className="mr-2 h-4 w-4" />
+              Previous
+            </Button>
+            <Button className="w-full" onClick={goToRandom} variant="outline" size="lg">
+              <Shuffle className="mr-2 h-4 w-4" />
+              Random
+            </Button>
+            <Button className="w-full" onClick={goToNext} variant="outline" size="lg">
+              Next
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+        </div>
       </div>
+      {/* Sidebar for learned words */}
+        <div className="border rounded-md container mx-auto py-8 px-4 max-w-3xl">
+        <h2 className="text-lg font-bold mb-4">Learned Words ({learnedWords.length})</h2>
+        <ScrollArea className="flex-1">
+          <ul className="space-y-2">
+            {learnedWords.map((wordId) => {
+              const word = allWords.find((w) => createWordId(w) === wordId)
+              if (!word) return null
+
+              return (
+                <li
+                  key={wordId}
+                  className="flex items-center justify-between p-2 rounded-md hover:bg-muted cursor-pointer"
+                  onClick={() => navigateToWord(wordId)}
+                >
+                  <div className="flex-1">
+                    <div className="font-medium">{word.word}</div>
+                    <div className="text-sm text-muted-foreground">{word.kana}</div>
+                  </div>
+                  <button
+                    onClick={(e) => removeFromLearned(wordId, e)}
+                    className="text-muted-foreground hover:text-destructive"
+                    aria-label="Remove from learned"
+                  >
+                    <X size={16} />
+                  </button>
+                </li>
+              )
+            })}
+            {learnedWords.length === 0 && (
+              <li className="text-muted-foreground text-sm italic p-2">
+                No learned words yet. Check the box on a card to mark it as learned.
+              </li>
+            )}
+          </ul>
+        </ScrollArea>
+      </div>
+
     </div>
   )
 }
@@ -738,10 +873,12 @@ interface VocabCardProps {
   word: VocabWord
   totalCount: number
   currentIndex: number
+  isLearned: boolean
+  onToggleLearned: (event: React.MouseEvent) => void
   className?: string
 }
 
-function VocabCard({ word, totalCount, currentIndex, className }: VocabCardProps) {
+function VocabCard({ className, word, totalCount, currentIndex, isLearned, onToggleLearned }: VocabCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const toggleExpand = () => {
@@ -756,7 +893,19 @@ function VocabCard({ word, totalCount, currentIndex, className }: VocabCardProps
     <Card className={cn("w-full cursor-pointer transition-all duration-200 hover:shadow-md", className)} onClick={toggleExpand}>
       <CardHeader className="pb-2">
         <div className="flex justify-between items-center">
-          <CardTitle className="text-4xl font-bold">{word.word}</CardTitle>
+          <div className="flex items-center gap-4">
+            <CardTitle className="text-4xl font-bold">{word.word}</CardTitle>
+            <div className="flex items-center space-x-2">
+              <Checkbox id={`learned-${createWordId(word)}`} checked={isLearned} onClick={onToggleLearned} />
+              <label
+                htmlFor={`learned-${createWordId(word)}`}
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Learned
+              </label>
+            </div>
+          </div>
           <span className="text-sm text-muted-foreground">
             {currentIndex + 1} / {totalCount}
           </span>
