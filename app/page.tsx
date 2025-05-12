@@ -748,6 +748,10 @@ function VocabCard({ word, totalCount, currentIndex, className }: VocabCardProps
     setIsExpanded(!isExpanded)
   }
 
+  useEffect(() => {
+    setIsExpanded(false)
+  }, [word])
+
   return (
     <Card className={cn("w-full cursor-pointer transition-all duration-200 hover:shadow-md", className)} onClick={toggleExpand}>
       <CardHeader className="pb-2">
