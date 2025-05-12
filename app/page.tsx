@@ -443,216 +443,854 @@ export default function JapaneseVocabulary() {
     },
   ]
 
-  const meishiFormatted: Meishi[] = [
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "保育園",
-      kana: "ほいくえん",
-      meaning: "nursery school",
-      example: "My daughter goes to a nursery school.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "幼稚園",
-      kana: "ようちえん",
-      meaning: "kindergarten",
-      example: "I walked past a kindergarten today.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "小学校",
-      kana: "しょうがっこう",
-      meaning: "elementary school",
-      example: "He studies at an elementary school.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "初学生",
-      kana: "しょがくせい",
-      meaning: "elementary school student",
-      example: "The elementary school student was waiting at the bus stop.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "中学校",
-      kana: "ちゅうがっこう",
-      meaning: "junior high school",
-      example: "This is my local junior high school.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "中学生",
-      kana: "ちゅうがくせい",
-      meaning: "junior high school student",
-      example: "The junior high students played soccer.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "高校",
-      kana: "こうこう",
-      meaning: "high school",
-      example: "I visited my old high school.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "高校生",
-      kana: "こうこうせい",
-      meaning: "high school student",
-      example: "The high school students wore uniforms.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "大学",
-      kana: "だいがく",
-      meaning: "university",
-      example: "She goes to a famous university.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "大学生",
-      kana: "だいがくせい",
-      meaning: "university student",
-      example: "The university student studies economics.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "大学院",
-      kana: "だいがくいん",
-      meaning: "graduate school",
-      example: "He wants to enter graduate school.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "大学院生",
-      kana: "だいがくいんせい",
-      meaning: "graduate student",
-      example: "The graduate student is doing research.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "予備校",
-      kana: "よびこう",
-      meaning: "prep school",
-      example: "He studies at a prep school.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "予備校生",
-      kana: "よびこうせい",
-      meaning: "prep school student",
-      example: "The prep school student looked tired.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "音",
-      kana: "おと",
-      meaning: "sound",
-      example: "I heard a strange sound.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "音楽",
-      kana: "おんがく",
-      meaning: "music",
-      example: "I love listening to music.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "声",
-      kana: "こえ",
-      meaning: "voice",
-      example: "Her voice is beautiful.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "鳴き声",
-      kana: "なきごえ",
-      meaning: "cry (animal sound)",
-      example: "I heard a cat's cry.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 1,
-      word: "形",
-      kana: "かたち",
-      meaning: "shape",
-      example: "This shape is unusual.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 2,
-      word: "買い建て",
-      kana: "かいたて",
-      meaning: "newly bought building",
-      example: "We moved into a newly bought house.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 2,
-      word: "アパート",
-      kana: "あぱーと",
-      meaning: "apartment",
-      example: "She lives in a small apartment.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 3,
-      word: "看護師",
-      kana: "かんごし",
-      meaning: "nurse",
-      example: "The nurse helped the patient.",
-    },
-    {
-      type: "Meishi",
-      level: "BEGINNER 1",
-      chapter: 3,
-      word: "警察官",
-      kana: "けいさつかん",
-      meaning: "police officer",
-      example: "The police officer directed traffic.",
-    },
-  ]
-
+const meishiFormatted: Meishi[] = [
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '保育園',
+  kana: 'ほいくえん',
+  meaning: 'nursery school',
+  example: 'My daughter goes to a nursery school.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '幼稚園',
+  kana: 'ようちえん',
+  meaning: 'kindergarten',
+  example: 'I walked past a kindergarten today.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '小学校',
+  kana: 'しょうがっこう',
+  meaning: 'elementary school',
+  example: 'He studies at an elementary school.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '初学生',
+  kana: 'しょがくせい',
+  meaning: 'elementary school student',
+  example: 'The elementary school student was waiting at the bus stop.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '中学校',
+  kana: 'ちゅうがっこう',
+  meaning: 'junior high school',
+  example: 'This is my local junior high school.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '中学生',
+  kana: 'ちゅうがくせい',
+  meaning: 'junior high school student',
+  example: 'The junior high students played soccer.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '高校',
+  kana: 'こうこう',
+  meaning: 'high school',
+  example: 'I visited my old high school.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '高校生',
+  kana: 'こうこうせい',
+  meaning: 'high school student',
+  example: 'The high school students wore uniforms.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '大学',
+  kana: 'だいがく',
+  meaning: 'university',
+  example: 'She goes to a famous university.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '大学生',
+  kana: 'だいがくせい',
+  meaning: 'university student',
+  example: 'The university student studies economics.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '大学院',
+  kana: 'だいがくいん',
+  meaning: 'graduate school',
+  example: 'He wants to enter graduate school.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '大学院生',
+  kana: 'だいがくいんせい',
+  meaning: 'graduate student',
+  example: 'The graduate student is doing research.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '予備校',
+  kana: 'よびこう',
+  meaning: 'prep school',
+  example: 'He studies at a prep school.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '予備校生',
+  kana: 'よびこうせい',
+  meaning: 'prep school student',
+  example: 'The prep school student looked tired.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '音',
+  kana: 'おと',
+  meaning: 'sound',
+  example: 'I heard a strange sound.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '音楽',
+  kana: 'おんがく',
+  meaning: 'music',
+  example: 'I love listening to music.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '声',
+  kana: 'こえ',
+  meaning: 'voice',
+  example: 'Her voice is beautiful.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '鳴き声',
+  kana: 'なきごえ',
+  meaning: 'animal cry',
+  example: 'I heard a cat’s cry.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 1,
+  word: '形',
+  kana: 'かたち',
+  meaning: 'shape',
+  example: 'This shape is unusual.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '買い建て',
+  kana: 'かいたて',
+  meaning: 'newly bought building',
+  example: 'We moved into a newly bought house.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'アパート',
+  kana: 'あぱーと',
+  meaning: 'apartment',
+  example: 'She lives in a small apartment.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'マンション',
+  kana: 'まんしょん',
+  meaning: 'condominium',
+  example: 'They bought a new condominium.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '地下',
+  kana: 'ちか',
+  meaning: 'basement',
+  example: 'The basement is used for storage.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '屋上',
+  kana: 'おくじょう',
+  meaning: 'rooftop',
+  example: 'We had lunch on the rooftop.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '階段',
+  kana: 'かいだん',
+  meaning: 'stairs',
+  example: 'Take the stairs to the second floor.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '非常口',
+  kana: 'ひじょうぐち',
+  meaning: 'emergency exit',
+  example: 'Please do not block the emergency exit.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '建物',
+  kana: 'たてもの',
+  meaning: 'building',
+  example: 'That building is very old.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '柄',
+  kana: 'がら',
+  meaning: 'pattern',
+  example: 'I like the pattern on your shirt.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '値段',
+  kana: 'ねだん',
+  meaning: 'price',
+  example: 'What is the price of this bag?'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'サイズ',
+  kana: 'さいず',
+  meaning: 'size',
+  example: 'Do you have this in my size?'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'ひげ',
+  kana: 'ひげ',
+  meaning: 'beard',
+  example: 'He has a long beard.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'お客さん',
+  kana: 'おきゃくさん',
+  meaning: 'customer',
+  example: 'The customer ordered sushi.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '酔っ払い',
+  kana: 'よっぱらい',
+  meaning: 'drunk person',
+  example: 'A drunk person was singing loudly.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'メニュー',
+  kana: 'めにゅー',
+  meaning: 'menu',
+  example: 'The menu has many options.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '生ビール',
+  kana: 'なまびーる',
+  meaning: 'draft beer',
+  example: 'He ordered a draft beer.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '大ジョッキ',
+  kana: 'だいじょっき',
+  meaning: 'large beer mug',
+  example: 'She drank from a large beer mug.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '中ジョッキ',
+  kana: 'ちゅうじょっき',
+  meaning: 'medium beer mug',
+  example: 'I prefer a medium beer mug.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'お座敷',
+  kana: 'おざしき',
+  meaning: 'tatami room',
+  example: 'We ate in a traditional tatami room.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '座布団',
+  kana: 'ざぶとん',
+  meaning: 'floor cushion',
+  example: 'There was a cushion on the floor.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '畳',
+  kana: 'たたみ',
+  meaning: 'tatami mat',
+  example: 'Tatami mats cover the floor.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '伝病',
+  kana: 'でんびょう',
+  meaning: 'infectious disease',
+  example: 'We must avoid spreading infectious diseases.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'レジ',
+  kana: 'れじ',
+  meaning: 'cash register',
+  example: 'The cashier is at the register.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'レシート',
+  kana: 'れしーと',
+  meaning: 'receipt',
+  example: 'Keep the receipt for returns.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '領収書',
+  kana: 'りょうしゅうしょ',
+  meaning: 'invoice',
+  example: 'He asked for an invoice.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '音楽会',
+  kana: 'おんがくかい',
+  meaning: 'concert',
+  example: 'We went to a concert together.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '歌',
+  kana: 'うた',
+  meaning: 'song',
+  example: 'That’s my favorite song.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'ピアノ',
+  kana: 'ぴあの',
+  meaning: 'piano',
+  example: 'She plays the piano beautifully.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '近所',
+  kana: 'きんじょ',
+  meaning: 'neighborhood',
+  example: 'I walk around the neighborhood.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '近く',
+  kana: 'ちかく',
+  meaning: 'nearby',
+  example: 'There’s a café nearby.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '遠く',
+  kana: 'とおく',
+  meaning: 'far away',
+  example: 'We saw mountains far away.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '化粧品',
+  kana: 'けしょうひん',
+  meaning: 'cosmetics',
+  example: 'She bought cosmetics at the store.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '女性用',
+  kana: 'じょせいよう',
+  meaning: 'for women',
+  example: 'This product is for women.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '大人用',
+  kana: 'おとなよう',
+  meaning: 'for adults',
+  example: 'These masks are for adults.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '子供用',
+  kana: 'こどもよう',
+  meaning: 'for children',
+  example: 'This toothpaste is for children.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'エレベーター',
+  kana: 'えれべーたー',
+  meaning: 'elevator',
+  example: 'Take the elevator to the top floor.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'エスカレーター',
+  kana: 'えすかれーたー',
+  meaning: 'escalator',
+  example: 'The escalator is on the left.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '角',
+  kana: 'かど',
+  meaning: 'corner',
+  example: 'Turn at the next corner.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: 'すみ',
+  kana: 'すみ',
+  meaning: 'corner (inner)',
+  example: 'He sat in the corner of the room.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '正面',
+  kana: 'しょうめん',
+  meaning: 'front',
+  example: 'The entrance is at the front.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '突き当たり',
+  kana: 'つきあたり',
+  meaning: 'end of the street',
+  example: 'Go straight to the end.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '真ん中',
+  kana: 'まんなか',
+  meaning: 'center',
+  example: 'Stand in the center.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '間',
+  kana: 'あいだ',
+  meaning: 'between',
+  example: 'He stood between the cars.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '先',
+  kana: 'さき',
+  meaning: 'ahead',
+  example: 'The station is just ahead.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '手前',
+  kana: 'てまえ',
+  meaning: 'this side',
+  example: 'The shop is on this side of the street.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '向こう',
+  kana: 'むこう',
+  meaning: 'over there',
+  example: 'The school is over there.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '周り',
+  kana: 'まわり',
+  meaning: 'around',
+  example: 'There are trees around the house.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '斜め',
+  kana: 'ななめ',
+  meaning: 'diagonal',
+  example: 'It’s across diagonally from here.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '鳥',
+  kana: 'とり',
+  meaning: 'bird',
+  example: 'A bird is singing in the tree.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '空',
+  kana: 'そら',
+  meaning: 'sky',
+  example: 'The sky is blue today.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '町',
+  kana: 'まち',
+  meaning: 'town',
+  example: 'I live in a quiet town.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '廊下',
+  kana: 'ろうか',
+  meaning: 'hallway',
+  example: 'The hallway is long.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '橋',
+  kana: 'はし',
+  meaning: 'bridge',
+  example: 'We crossed the bridge.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '海',
+  kana: 'うみ',
+  meaning: 'sea',
+  example: 'The sea is calm today.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '山',
+  kana: 'やま',
+  meaning: 'mountain',
+  example: 'We climbed a tall mountain.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '川',
+  kana: 'かわ',
+  meaning: 'river',
+  example: 'There’s a river behind my house.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '観光地',
+  kana: 'かんこうち',
+  meaning: 'tourist spot',
+  example: 'Kyoto is a famous tourist spot.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 2,
+  word: '横断歩道',
+  kana: 'おうだんほどう',
+  meaning: 'pedestrian crossing',
+  example: 'Use the pedestrian crossing.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '看護師',
+  kana: 'かんごし',
+  meaning: 'nurse',
+  example: 'The nurse helped the patient.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '警察官',
+  kana: 'けいさつかん',
+  meaning: 'police officer',
+  example: 'The police officer directed traffic.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '選手',
+  kana: 'せんしゅ',
+  meaning: 'athlete / player',
+  example: 'The player scored a goal.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '歌手',
+  kana: 'かしゅ',
+  meaning: 'singer',
+  example: 'My sister wants to be a singer.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '教師',
+  kana: 'きょうし',
+  meaning: 'teacher (formal)',
+  example: 'The teacher explained the answer.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '社長',
+  kana: 'しゃちょう',
+  meaning: 'company president',
+  example: 'The president gave a speech.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: 'ガイド',
+  kana: 'がいど',
+  meaning: 'guide',
+  example: 'The guide spoke fluent English.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '通訳',
+  kana: 'つうやく',
+  meaning: 'interpreter',
+  example: 'An interpreter helped us communicate.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '医者',
+  kana: 'いしゃ',
+  meaning: 'doctor',
+  example: 'The doctor gave me medicine.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '美容院',
+  kana: 'びよういん',
+  meaning: 'beauty salon',
+  example: 'She works at a beauty salon.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '涙',
+  kana: 'なみだ',
+  meaning: 'tears',
+  example: 'Tears ran down her face.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '席',
+  kana: 'せき',
+  meaning: 'seat',
+  example: 'Please take a seat.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '夜景',
+  kana: 'やけい',
+  meaning: 'night view',
+  example: 'The night view was beautiful.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '大人',
+  kana: 'おとな',
+  meaning: 'adult',
+  example: 'Only adults can enter this bar.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '玉葱',
+  kana: 'たまねぎ',
+  meaning: 'onion',
+  example: 'I cut an onion for dinner.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '割引',
+  kana: 'わりびき',
+  meaning: 'discount',
+  example: 'There’s a discount today.'
+},
+{
+  type: 'Meishi',
+  level: 'BEGINNER 1',
+  chapter: 3,
+  word: '屁',
+  kana: 'へ',
+  meaning: 'fart',
+  example: 'Someone farted in the elevator.'
+}
+];
   const allWords = [...meishiFormatted, ...doushiFormatted]
 
   const [activeTab, setActiveTab] = useState<"meishi" | "doushi" | "all">("all")
