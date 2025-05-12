@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Shuffle } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 type Doushi = {
   type: "Doushi"
@@ -703,11 +704,11 @@ export default function JapaneseVocabulary() {
         </TabsList>
 
         <TabsContent value="meishi" className="mt-0">
-          {currentWord && <VocabCard word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
+          {currentWord && <VocabCard className="bg-yellow-100" word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
         </TabsContent>
 
         <TabsContent value="doushi" className="mt-0">
-          {currentWord && <VocabCard word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
+          {currentWord && <VocabCard className="bg-green-100" word={currentWord} totalCount={currentWords.length} currentIndex={currentIndex} />}
         </TabsContent>
 
         <TabsContent value="all" className="mt-0">
@@ -715,16 +716,16 @@ export default function JapaneseVocabulary() {
         </TabsContent>
       </Tabs>
 
-      <div className="flex justify-center gap-4 mt-8">
-        <Button onClick={goToPrevious} variant="outline" size="lg">
+      <div className="lg:flex justify-center space-y-2 lg:space-y-0 lg:space-x-2 mt-8">
+        <Button className="w-full" onClick={goToPrevious} variant="outline" size="lg">
           <ChevronLeft className="mr-2 h-4 w-4" />
           Previous
         </Button>
-        <Button onClick={goToRandom} variant="outline" size="lg">
+        <Button className="w-full" onClick={goToRandom} variant="outline" size="lg">
           <Shuffle className="mr-2 h-4 w-4" />
           Random
         </Button>
-        <Button onClick={goToNext} variant="outline" size="lg">
+        <Button className="w-full" onClick={goToNext} variant="outline" size="lg">
           Next
           <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
@@ -737,9 +738,10 @@ interface VocabCardProps {
   word: VocabWord
   totalCount: number
   currentIndex: number
+  className?: string
 }
 
-function VocabCard({ word, totalCount, currentIndex }: VocabCardProps) {
+function VocabCard({ word, totalCount, currentIndex, className }: VocabCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const toggleExpand = () => {
@@ -747,7 +749,7 @@ function VocabCard({ word, totalCount, currentIndex }: VocabCardProps) {
   }
 
   return (
-    <Card className="w-full cursor-pointer transition-all duration-200 hover:shadow-md" onClick={toggleExpand}>
+    <Card className={cn("w-full cursor-pointer transition-all duration-200 hover:shadow-md", className)} onClick={toggleExpand}>
       <CardHeader className="pb-2">
         <div className="flex justify-between items-center">
           <CardTitle className="text-4xl font-bold">{word.word}</CardTitle>
