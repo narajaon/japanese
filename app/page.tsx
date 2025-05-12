@@ -755,11 +755,11 @@ export default function JapaneseVocabulary() {
   const currentWord = currentWords[currentIndex]
 
   return (
-    <div>
+    <div className="p-4">
       {/* Main content */}
       <div className="flex-1 overflow-auto">
         <div className="container mx-auto py-8 max-w-3xl">
-          <h1 className="text-3xl font-bold text-center mb-8">Japanese Vocabulary Study</h1>
+          <h1 className="text-3xl font-bold text-center mb-8">テストこわい</h1>
 
           <Tabs
             defaultValue="all"
