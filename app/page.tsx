@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils"
 type Doushi = {
   type: "Doushi"
   level: "BEGINNER 1"
-  chapter: 1 | 2 | 3
+  chapter: 1 | 2 | 3 | 4
   word: string
   kana: string
   meaning: string
@@ -25,7 +25,7 @@ type Doushi = {
 type Meishi = {
   type: "Meishi"
   level: "BEGINNER 1"
-  chapter: 1 | 2 | 3
+  chapter: 1 | 2 | 3 | 4
   word: string
   kana: string
   meaning: string
@@ -441,6 +441,56 @@ export default function JapaneseVocabulary() {
       group: 2,
       example: "I finished work.",
     },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '手伝う',
+      kana: 'てつだう',
+      meaning: 'to help',
+      group: 1,
+      example: 'Can you help me?'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '習う',
+      kana: 'ならう',
+      meaning: 'to learn',
+      group: 1,
+      example: 'I learn Japanese every day.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '頼む',
+      kana: 'たのむ',
+      meaning: 'to ask / request',
+      group: 1,
+      example: 'I asked him a favor.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '急ぐ',
+      kana: 'いそぐ',
+      meaning: 'to hurry',
+      group: 1,
+      example: 'Please hurry up!'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '残る',
+      kana: 'のこる',
+      meaning: 'to remain',
+      group: 1,
+      example: 'Only a few tickets remain.'
+    }
   ]
 
   const meishiFormatted: Meishi[] = [
@@ -1289,8 +1339,99 @@ export default function JapaneseVocabulary() {
       kana: 'おなら',
       meaning: 'fart',
       example: 'Someone farted in the elevator.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: 'うなぎ',
+      kana: 'うなぎ',
+      meaning: 'eel',
+      example: 'I ate grilled eel for dinner.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '鰻重',
+      kana: 'うなじゅう',
+      meaning: 'eel rice box',
+      example: 'She ordered an eel rice box.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '天井',
+      kana: 'てんじょう',
+      meaning: 'ceiling',
+      example: 'The ceiling is very high.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '壁',
+      kana: 'かべ',
+      meaning: 'wall',
+      example: 'There is a painting on the wall.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '床',
+      kana: 'ゆか',
+      meaning: 'floor',
+      example: 'The floor is clean.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '授業',
+      kana: 'じゅぎょう',
+      meaning: 'class (lesson)',
+      example: "Today's class was interesting."
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '教壇',
+      kana: 'きょうだん',
+      meaning: "teacher's platform",
+      example: 'The teacher stood on the platform.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '黒板',
+      kana: 'こくばん',
+      meaning: 'blackboard',
+      example: 'He wrote the answer on the blackboard.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '遊び',
+      kana: 'あそび',
+      meaning: 'play / game',
+      example: 'The children enjoy their playtime.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 4,
+      word: '科目',
+      kana: 'かもく',
+      meaning: 'subject (school)',
+      example: 'Math is my favorite subject.'
     }
   ];
+
   const allWords = [...meishiFormatted, ...doushiFormatted]
 
   const [activeTab, setActiveTab] = useState<"meishi" | "doushi" | "all">("all")
