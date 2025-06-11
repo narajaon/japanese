@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils"
 type Doushi = {
   type: "Doushi"
   level: "BEGINNER 1"
-  chapter: 1 | 2 | 3 | 4
+  chapter: 1 | 2 | 3 | 4 | 5
   word: string
   kana: string
   meaning: string
@@ -490,6 +490,216 @@ export default function JapaneseVocabulary() {
       meaning: 'to remain',
       group: 1,
       example: 'Only a few tickets remain.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '可愛がる',
+      kana: 'かわいがる',
+      meaning: 'to cherish / adore',
+      group: 1,
+      example: 'She adores her pet.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '働く',
+      kana: 'はたらく',
+      meaning: 'to work',
+      group: 1,
+      example: 'I work at a bank.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '似合う',
+      kana: 'にあう',
+      meaning: 'to suit / match',
+      group: 1,
+      example: 'That dress suits you.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'やる',
+      kana: 'やる',
+      meaning: 'to give (casual)',
+      group: 1,
+      example: 'I gave the dog food.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'もらう',
+      kana: 'もらう',
+      meaning: 'to receive',
+      group: 1,
+      example: 'I received a gift.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'いただく',
+      kana: 'いただく',
+      meaning: 'to receive (humble)',
+      group: 1,
+      example: 'I humbly received the present.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'くださる',
+      kana: 'くださる',
+      meaning: 'to give (honorific)',
+      group: 1,
+      example: 'My teacher gave me a book.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'つなぐ',
+      kana: 'つなぐ',
+      meaning: 'to connect / hold hands',
+      group: 1,
+      example: 'They held hands.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '直る',
+      kana: 'なおる',
+      meaning: 'to be fixed',
+      group: 1,
+      example: 'The computer is fixed.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '直す',
+      kana: 'なおす',
+      meaning: 'to fix',
+      group: 1,
+      example: 'I will fix the mistake.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '引越す',
+      kana: 'ひっこす',
+      meaning: 'to move house',
+      group: 1,
+      example: 'We are moving next week.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '送る',
+      kana: 'おくる',
+      meaning: 'to send',
+      group: 1,
+      example: 'I sent a letter.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '取る',
+      kana: 'とる',
+      meaning: 'to take',
+      group: 1,
+      example: 'I took a photo.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '似る',
+      kana: 'にる',
+      meaning: 'to resemble',
+      group: 2,
+      example: 'You resemble your father.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'あげる',
+      kana: 'あげる',
+      meaning: 'to give',
+      group: 2,
+      example: 'I gave her a present.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'さしあげる',
+      kana: 'さしあげる',
+      meaning: 'to give (humble)',
+      group: 2,
+      example: 'I humbly gave my teacher flowers.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'くれる',
+      kana: 'くれる',
+      meaning: 'to give (to me)',
+      group: 2,
+      example: 'My friend gave me a watch.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '捨てる',
+      kana: 'すてる',
+      meaning: 'to throw away',
+      group: 2,
+      example: "Don't throw it away!"
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'つとめる',
+      kana: 'つとめる',
+      meaning: 'to work for',
+      group: 2,
+      example: 'He works for a big company.'
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '困る',
+      kana: 'こまる',
+      meaning: 'to be troubled',
+      group: 1,
+      example: "I'm troubled by the situation."
+    },
+    {
+      type: 'Doushi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'ひらう',
+      kana: 'ひらう',
+      meaning: 'to pick up',
+      group: 1,
+      example: 'I picked up a coin.'
     }
   ]
 
