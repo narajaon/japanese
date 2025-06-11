@@ -25,7 +25,7 @@ type Doushi = {
 type Meishi = {
   type: "Meishi"
   level: "BEGINNER 1"
-  chapter: 1 | 2 | 3 | 4
+  chapter: 1 | 2 | 3 | 4 | 5
   word: string
   kana: string
   meaning: string
@@ -1429,6 +1429,123 @@ export default function JapaneseVocabulary() {
       kana: 'かもく',
       meaning: 'subject (school)',
       example: 'Math is my favorite subject.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '性格',
+      kana: 'せいかく',
+      meaning: 'personality',
+      example: 'He has a kind personality.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '職業',
+      kana: 'しょくぎょう',
+      meaning: 'occupation',
+      example: 'Her occupation is a designer.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '独身',
+      kana: 'どくしん',
+      meaning: 'single (unmarried)',
+      example: 'He is still single.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'えさ',
+      kana: 'えさ',
+      meaning: 'animal food',
+      example: 'Don’t forget to give the dog its food.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'お土産',
+      kana: 'おみやげ',
+      meaning: 'souvenir',
+      example: 'I bought a souvenir from Kyoto.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'お見舞い',
+      kana: 'おみまい',
+      meaning: 'hospital visit',
+      example: 'We went for a hospital visit.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '荷物',
+      kana: 'にもつ',
+      meaning: 'luggage',
+      example: 'Her luggage was very heavy.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '生活',
+      kana: 'せいかつ',
+      meaning: 'life / livelihood',
+      example: 'I enjoy my life in Japan.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: 'お正月',
+      kana: 'おしょうがつ',
+      meaning: 'New Year',
+      example: 'New Year is a big holiday in Japan.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '指輪',
+      kana: 'ゆびわ',
+      meaning: 'ring',
+      example: 'She received a diamond ring.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '縫いぐるみ',
+      kana: 'ぬいぐるみ',
+      meaning: 'stuffed animal',
+      example: 'He gave me a stuffed bear.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '招待',
+      kana: 'しょうたい',
+      meaning: 'invitation',
+      example: 'I received an invitation to the party.'
+    },
+    {
+      type: 'Meishi',
+      level: 'BEGINNER 1',
+      chapter: 5,
+      word: '面接',
+      kana: 'めんせつ',
+      meaning: 'interview',
+      example: 'The job interview went well.'
     }
   ];
 
