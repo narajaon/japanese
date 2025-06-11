@@ -1907,6 +1907,7 @@ export default function JapaneseVocabulary() {
             <TabsContent value="all" className="mt-0">
               {currentWord && (
                 <VocabCard
+                  className={currentWord.type === 'Doushi' ? 'bg-green-50' : 'bg-yellow-50'}
                   word={currentWord}
                   totalCount={currentWords.length}
                   currentIndex={currentIndex}
