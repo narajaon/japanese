@@ -22,7 +22,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-        <footer className="w-full text-center mt-10 mb-5 text-gray-500">
+        <footer className="w-full text-center text-sm mt-10 mb-5 text-gray-500">
           Made by Fabien Rajaonarison
         </footer>
       </body>
